@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.com/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://service.com/">
+  <xs:element name="Respuesta" type="tns:respuesta"/>
+  <xs:element name="Usuario" type="tns:usuario"/>
+  <xs:element name="addUsuario" type="tns:addUsuario"/>
+  <xs:element name="addUsuarioResponse" type="tns:addUsuarioResponse"/>
+  <xs:element name="checkCallWS" type="tns:checkCallWS"/>
+  <xs:element name="checkCallWSResponse" type="tns:checkCallWSResponse"/>
+  <xs:element name="deleteUsuario" type="tns:deleteUsuario"/>
+  <xs:element name="deleteUsuarioResponse" type="tns:deleteUsuarioResponse"/>
+  <xs:element name="getUsuario" type="tns:getUsuario"/>
+  <xs:element name="getUsuarioResponse" type="tns:getUsuarioResponse"/>
+  <xs:element name="getUsuariosList" type="tns:getUsuariosList"/>
+  <xs:element name="getUsuariosListResponse" type="tns:getUsuariosListResponse"/>
+  <xs:element name="setUsuariosList" type="tns:setUsuariosList"/>
+  <xs:element name="setUsuariosListResponse" type="tns:setUsuariosListResponse"/>
+  <xs:element name="updateUsuario" type="tns:updateUsuario"/>
+  <xs:element name="updateUsuarioResponse" type="tns:updateUsuarioResponse"/>
+  <xs:complexType name="getUsuariosList">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getUsuariosListResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" ref="tns:Usuario"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="usuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apel" type="xs:string"/>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:usuario"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addUsuarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="tns:Respuesta"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="respuesta">
+    <xs:sequence>
+      <xs:element name="codigo" type="xs:int"/>
+      <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:usuario"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateUsuarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="tns:Respuesta"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setUsuariosList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="arg0" type="tns:usuario"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setUsuariosListResponse">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getUsuario">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getUsuarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="tns:Usuario"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="checkCallWS">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="checkCallWSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuesta"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:usuario"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IOException" type="tns:IOException"/>
+  <xs:complexType name="IOException">
+    <xs:sequence/>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="UsuarioServciceService" targetNamespace="http://service.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+<import namespace="http://service.com/" schemaLocation="usuarioservcice_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="getUsuariosList">
+    <wsdl:part name="parameters" element="tns:getUsuariosList">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateUsuario">
+    <wsdl:part name="parameters" element="tns:updateUsuario">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUsuarioResponse">
+    <wsdl:part name="parameters" element="tns:getUsuarioResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="IOException">
+    <wsdl:part name="IOException" element="tns:IOException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteUsuario">
+    <wsdl:part name="parameters" element="tns:deleteUsuario">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkCallWSResponse">
+    <wsdl:part name="parameters" element="tns:checkCallWSResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addUsuario">
+    <wsdl:part name="parameters" element="tns:addUsuario">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setUsuariosListResponse">
+    <wsdl:part name="parameters" element="tns:setUsuariosListResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="setUsuariosList">
+    <wsdl:part name="parameters" element="tns:setUsuariosList">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUsuario">
+    <wsdl:part name="parameters" element="tns:getUsuario">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateUsuarioResponse">
+    <wsdl:part name="parameters" element="tns:updateUsuarioResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteUsuarioResponse">
+    <wsdl:part name="parameters" element="tns:deleteUsuarioResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkCallWS">
+    <wsdl:part name="parameters" element="tns:checkCallWS">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUsuariosListResponse">
+    <wsdl:part name="parameters" element="tns:getUsuariosListResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addUsuarioResponse">
+    <wsdl:part name="parameters" element="tns:addUsuarioResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="UsuarioServcice">
+    <wsdl:operation name="getUsuariosList">
+      <wsdl:input name="getUsuariosList" message="tns:getUsuariosList">
+    </wsdl:input>
+      <wsdl:output name="getUsuariosListResponse" message="tns:getUsuariosListResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addUsuario">
+      <wsdl:input name="addUsuario" message="tns:addUsuario">
+    </wsdl:input>
+      <wsdl:output name="addUsuarioResponse" message="tns:addUsuarioResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUsuario">
+      <wsdl:input name="updateUsuario" message="tns:updateUsuario">
+    </wsdl:input>
+      <wsdl:output name="updateUsuarioResponse" message="tns:updateUsuarioResponse">
+    </wsdl:output>
+      <wsdl:fault name="IOException" message="tns:IOException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setUsuariosList">
+      <wsdl:input name="setUsuariosList" message="tns:setUsuariosList">
+    </wsdl:input>
+      <wsdl:output name="setUsuariosListResponse" message="tns:setUsuariosListResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUsuario">
+      <wsdl:input name="getUsuario" message="tns:getUsuario">
+    </wsdl:input>
+      <wsdl:output name="getUsuarioResponse" message="tns:getUsuarioResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkCallWS">
+      <wsdl:input name="checkCallWS" message="tns:checkCallWS">
+    </wsdl:input>
+      <wsdl:output name="checkCallWSResponse" message="tns:checkCallWSResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteUsuario">
+      <wsdl:input name="deleteUsuario" message="tns:deleteUsuario">
+    </wsdl:input>
+      <wsdl:output name="deleteUsuarioResponse" message="tns:deleteUsuarioResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UsuarioServciceServiceSoapBinding" type="tns:UsuarioServcice">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getUsuariosList">
+      <soap:operation soapAction="urn:GetUsuariosList" style="document"/>
+      <wsdl:input name="getUsuariosList">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUsuariosListResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addUsuario">
+      <soap:operation soapAction="urn:AddUsuario" style="document"/>
+      <wsdl:input name="addUsuario">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addUsuarioResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUsuario">
+      <soap:operation soapAction="urn:UpdateUsuario" style="document"/>
+      <wsdl:input name="updateUsuario">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateUsuarioResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="IOException">
+        <soap:fault name="IOException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setUsuariosList">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="setUsuariosList">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="setUsuariosListResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUsuario">
+      <soap:operation soapAction="urn:GetUsuario" style="document"/>
+      <wsdl:input name="getUsuario">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUsuarioResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkCallWS">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="checkCallWS">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="checkCallWSResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteUsuario">
+      <soap:operation soapAction="urn:DeleteUsuario" style="document"/>
+      <wsdl:input name="deleteUsuario">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteUsuarioResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UsuarioServciceService">
+    <wsdl:port name="UsuarioServcicePort" binding="tns:UsuarioServciceServiceSoapBinding">
+      <soap:address location="http://localhost:8080/CRUDWSBBDD/services/UsuarioServcicePort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
