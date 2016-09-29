@@ -8,4 +8,4 @@ Requisitos previos:
 - Libreria Connector JDBC.
 
 
-He creado tambien el cliente WS, pero en principio no lo uso.
+He creado tambien el cliente WS "CRUDWSBBDDClient", pero en principio no lo uso.
